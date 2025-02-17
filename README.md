@@ -1,11 +1,11 @@
 # **FaceID Web Authentication with OpenCV, AWS, Flask & MongoDB**
 
-## **📌 Project Overview**
+## **Project Overview**
 FaceID-Web-Auth is a real-time face authentication system built using **OpenCV**, **Face Recognition**, **AWS S3 & DynamoDB**, and **Flask**. It allows for **secure authentication** using facial recognition, eliminating the need for passwords.
 
 ---
 
-## **🚀 How We Achieved It**
+## **How We Achieved It**
 
 1. **Face Encoding Extraction**:
    - **OpenCV** was used to capture images from the webcam.
@@ -25,7 +25,7 @@ FaceID-Web-Auth is a real-time face authentication system built using **OpenCV**
    
 ---
 
-## **📂 Directory Structure**
+## **Directory Structure**
 
 ```bash
 FaceID-Web-Auth/
@@ -54,8 +54,8 @@ FaceID-Web-Auth/
 
 ### **1. Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/FaceID-Web-Auth.git
-cd FaceID-Web-Auth
+git clone https://github.com/r0han01/faceid-auth-aws-opencv-flask.git
+cd faceid-auth-aws-opencv-flask
 ```
 
 ### **2. Set up a virtual environment:**
@@ -86,7 +86,7 @@ Now, visit `http://127.0.0.1:5000` in your browser to use the system.
 
 ---
 
-## **📜 Useful Scripts**
+## **Useful Scripts**
 
 - **Upload Image to S3**:  
   Upload a new image to AWS S3:
@@ -114,7 +114,7 @@ Now, visit `http://127.0.0.1:5000` in your browser to use the system.
 
 ---
 
-## **⚙️ Configuration**
+## **Configuration**
 Ensure the following AWS configurations are correctly set in the `.env` file:
 - `AWS_ACCESS_KEY_ID`  
 - `AWS_SECRET_ACCESS_KEY`  
@@ -122,7 +122,7 @@ Ensure the following AWS configurations are correctly set in the `.env` file:
 
 ---
 
-## **💡 Key Concepts**
+## **Key Concepts**
 
 - **Face Encoding**:  
   A numerical representation of a person's face features, used to compare faces in the system.
