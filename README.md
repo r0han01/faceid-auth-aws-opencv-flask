@@ -3,6 +3,10 @@
 ## **Project Overview**
 FaceID-Web-Auth is a real-time face authentication system built using **OpenCV**, **Face Recognition**, **AWS S3 & DynamoDB**, and **Flask**. It allows for **secure authentication** using facial recognition, eliminating the need for passwords.
 
+###
+![ScreenShot Tool -20250217175445](https://github.com/user-attachments/assets/dea5f598-da37-4200-b806-a3a15a0094fc)
+###
+
 ---
 
 ## **How We Achieved It**
