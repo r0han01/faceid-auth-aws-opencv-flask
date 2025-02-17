@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Authentication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Apply a blurred background image */
+        body {
+            background-image: url('https://media.wired.com/photos/624ca6e922287e54ebc7f22d/master/pass/Europe-Facial-Recognition-1041091610.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0 50px;
+        }
+
+        /* Apply the blur effect to the background */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .welcome-text {
+        font-size: 80px;
+        font-weight: bold;
+        background: linear-gradient(145deg, #a7a400, #000000);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: none;
+        margin-left: 20px;
+    }
+
+        /* Styling for the button */
+        .scan-btn {
+        font-family: 'Montserrat', sans-serif;
+        background: linear-gradient(145deg, #000000, #a7a400);
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 12px 24px; /* Reduced padding */
+        border: none;
+        border-radius: 40px; /* Slightly smaller radius */
+        cursor: pointer;
+        transition: all 0.4s ease;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
+        text-transform: capitalize;
+    }
+
+
+        .scan-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .scan-btn:hover {
+            background: linear-gradient(145deg, #000000, #747201);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+        }
+
+        .scan-btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .scan-btn:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px rgba(255, 153, 0, 0.5);
+        }
+
+        /* Add a subtle animation on hover */
+        .scan-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.6s;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        .scan-btn:hover::before {
+            width: 0;
+            height: 0;
+            opacity: 1;
+        }
+
+        /* Styling for the dynamic pop-up message */
+        #status {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+            z-index: 1000;
+        }
+
+        #status.success {
+            color: #28a745;
+            display: block;
+        }
+
+        #status.error {
+            color: #dc3545;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-text">Welcome</div>
+    <button class="scan-btn" id="scan-btn">Click Here to Scan Your Face For Authentication</button>
+    <p id="status"></p>
+
+    <script>
+        document.getElementById('scan-btn').addEventListener('click', function() {
+            // Disable the button while scanning
+            document.getElementById('scan-btn').disabled = true;
+            document.getElementById('status').innerText = 'Scanning... Please wait.';
+            document.getElementById('status').style.display = 'block';
+
+            // Call the backend to authenticate
+            fetch('/authenticate', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Show the result from the backend
+                document.getElementById('status').innerText = data.message;
+
+                // Add a class for styling error/success messages
+                if (data.message.includes('Face Matched')) {
+                    document.getElementById('status').classList.remove('error');
+                    document.getElementById('status').classList.add('success');
+                } else {
+                    document.getElementById('status').classList.remove('success');
+                    document.getElementById('status').classList.add('error');
+                }
+
+                // Enable the button again
+                document.getElementById('scan-btn').disabled = false;
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+                document.getElementById('status').classList.add('error');
+                document.getElementById('scan-btn').disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>

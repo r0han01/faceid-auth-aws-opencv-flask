@@ -1,0 +1,25 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+env/
+*.env
+
+# VS Code settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# AWS credentials
+FaceIDUser_accessKeys.csv
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+*.log
+
+# Data and model files
+data/
