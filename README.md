@@ -102,25 +102,38 @@ Now, visit `http://127.0.0.1:5000` in your browser to use the system.
   ```bash
   python upload_image_to_s3.py
   ```
+###
+![Screenshot from 2025-02-17 18-20-41](https://github.com/user-attachments/assets/2fb9406b-1349-4a9a-a19f-1bb6650ff5d8)
+###
+![ScreenShot Tool -20250217182258](https://github.com/user-attachments/assets/657cdc89-c079-4423-92aa-90be9b8b72bd)
+###
   
 - **Generate Face Encoding**:  
   Extract and generate face encoding from an image:
   ```bash
   python generate_face_encoding.py
   ```
-  
+###
+![Screenshot from 2025-02-17 18-26-21](https://github.com/user-attachments/assets/4dcf7d92-e886-418d-9a49-31ad8d896119)
+###
 - **Retrieve Face Encoding**:  
   Retrieve face encoding from DynamoDB:
   ```bash
   python retrieve_face_encoding.py
   ```
-
+###
+![Screenshot from 2025-02-17 18-29-32](https://github.com/user-attachments/assets/6ac93a50-e079-4d6f-8ca4-5df3eac9f9af)
+###
 - **Authenticate Face**:  
   Run authentication to verify a live face with the stored encoding:
   ```bash
   python src/authenticate.py
   ```
-
+###
+![IMG_3652 jpeg (1)](https://github.com/user-attachments/assets/e0467536-10e0-40e5-947f-725d7039a1a6)
+###
+![Screenshot from 2025-02-17 18-40-33](https://github.com/user-attachments/assets/f8642d21-1066-48ee-a04d-4462e543ab00)
+###
 ---
 
 ## **Configuration**
