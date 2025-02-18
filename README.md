@@ -23,8 +23,15 @@ FaceID-Web-Auth is a real-time face authentication system built using **OpenCV**
    - We implemented a Flask API (`app.py`) to handle requests.
    - When a face is detected via the webcam, we compare the live face encoding with the stored encoding using the **Face Recognition** library.
    - If a match is found, access is granted; otherwise, access is denied.
+   ###
+![resetImage](https://github.com/user-attachments/assets/99400396-f9be-427c-a438-ba81a07d87c7)
 
-4. **Logging Authentication Attempts**:
+   ###
+![ScreenShot Tool -20250217184714](https://github.com/user-attachments/assets/ddf62647-eb41-4b3f-b108-a0ca374fa874)
+
+   ###
+
+5. **Logging Authentication Attempts**:
    - **MongoDB** was used to log all authentication attempts with timestamps and status messages.
 ###
 ![ScreenShot Tool -20250217180129 (1)](https://github.com/user-attachments/assets/488ce325-afd2-4da5-8177-aabfa841e7b7)
