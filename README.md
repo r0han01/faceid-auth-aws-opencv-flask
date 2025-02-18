@@ -158,3 +158,34 @@ Ensure the following AWS configurations are correctly set in the `.env` file:
 - **MongoDB Logging**:  
   All authentication attempts, whether successful or not, are logged into MongoDB for auditing and debugging purposes.
 
+
+## 🔐 **Useful AWS & IAM Commands**  
+
+### **AWS CLI Setup**  
+```bash
+aws configure  # Set up AWS CLI credentials
+```
+
+### **S3 Bucket Commands**  
+```bash
+aws s3 ls                              # List all S3 buckets  
+aws s3 mb s3://your-bucket             # Create a new S3 bucket  
+aws s3 cp file.jpg s3://your-bucket/   # Upload file to S3  
+aws s3 rm s3://your-bucket/file.jpg    # Delete file from S3  
+```
+
+### **DynamoDB Commands**  
+```bash
+aws dynamodb list-tables                         # List all DynamoDB tables  
+aws dynamodb describe-table --table-name FaceIDTable  # Describe a table  
+aws dynamodb scan --table-name FaceIDTable       # Fetch all records  
+```
+
+### **IAM User & Role Management**  
+```bash
+aws iam list-users                                  # List IAM users  
+aws iam create-user --user-name new-user           # Create a new IAM user  
+aws iam list-roles                                  # List IAM roles  
+aws iam attach-user-policy --user-name new-user \
+--policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess  # Attach S3 policy  
+```
