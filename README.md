@@ -26,6 +26,11 @@ FaceID-Web-Auth is a real-time face authentication system built using **OpenCV**
 
 4. **Logging Authentication Attempts**:
    - **MongoDB** was used to log all authentication attempts with timestamps and status messages.
+###
+![ScreenShot Tool -20250217180129 (1)](https://github.com/user-attachments/assets/488ce325-afd2-4da5-8177-aabfa841e7b7)
+###
+![Screenshot from 2025-02-17 18-13-13](https://github.com/user-attachments/assets/d6c87dd7-f5d5-41be-b0d8-130f6825866e)
+###
    
 ---
 
